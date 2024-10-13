@@ -333,41 +333,24 @@ align-items: center;
   font-size: var(--font-size-button);
   background: var(--background);
   border-radius: var(--border-radius-button);
+  
   }
 
-  /* .header-button.base{
-    background: #fff;
-    position: relative;
-    width: 87px;
-  } */
-  
-  /* .header-button.base::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--border-radius-button); 
-    padding: 2px; 
-    background:linear-gradient(#BC9CFF, #8BA4F9); 
-    -webkit-mask: 
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude; 
-  } */
-  
   .button-login{
-  position: absolute;
-  display: inline-block;
-  height: 30px;
-  padding-inline: 20px;
-  border: none;
-  color: #BC9CFF;
-  /* background: var(--background);   Градиент для текста */
-  -webkit-background-clip: text;  /* Обрезаем фон по тексту */
-  -webkit-text-fill-color: transparent;  /* Прозрачный текст */
-  left: 2px;
-  top: 2px; */
-}
+    background: #fff;
+    width: 87px;
+    align-items: center;
+    color: #BC9CFF;
+    background: 
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to bottom, #BC9CFF, #8BA4F9) border-box;
+    border-radius: var(--border-radius-button);
+    border: 2px solid transparent;
+  }
+
+  .button-login:hover{
+    scale: 105%;
+  }
 
 .button-sing-up{
   padding-inline: 19px;
@@ -375,13 +358,6 @@ align-items: center;
 }
 
 .button-sing-up:hover{
-scale: 105%;
--webkit-background-clip: none;  /* Обрезаем фон по тексту */
--webkit-text-fill-color: none;  
-}
-
-.test-login{
-  padding-inline: 19px;
-  color: #ffffff;
+scale: 105%; 
 }
 
