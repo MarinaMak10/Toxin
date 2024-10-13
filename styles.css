@@ -185,8 +185,7 @@
     --color-green:  #6FCF97;
 
     --background: linear-gradient(#BC9CFF, #8BA4F9);
-    --border-color: linear-gradient(#BC9CFF, #8BA4F9);
-
+    
     --border-radius-field:  4px;
     --border-radius-toggle:  10px;
     --border-radius-button:  22px;
@@ -197,6 +196,8 @@
     --border-button:  2px  solid  var(--background);
 
     --font-family-base:  'Montserrat',  sans-serif;
+    --font-size: 14px;
+    --font-size-button: 12px;
 
     --input-height:  44px;
     --input-toggle-height:  20px;
@@ -211,13 +212,13 @@
  body  {
     background-color:  white;
     font-family:  var(--font-family-base);
-    font-size:  14px;
+    font-size:  var(--font-size);
     line-height:  1.5;
     color:  var(--color-dark-75);
  }
 
  a,  button,  input,  textarea,  svg *  {
-  -o-transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration);
 }
 
  a  {
@@ -250,17 +251,68 @@
     font-size: 12px;
  }
 
- button  {
+.header-actions{
+  display: flex; 
+  position: relative;
+  gap: 20px;
+  }
+
+ .header-button  {
   display: inline-block;
-  align-items: center;
+  border: none;
   height: 34px;
+  align-items: center;
+  font-weight: 700;
   text-transform: uppercase;
-  padding-inline: 26px;
-  border: var(--border-button);
+  font-size: var(--font-size-button);
+  background: var(--background);
+  cursor: pointer;
+  border-radius: var(--border-radius-button);
+  }
+
+  .header-button.base{
+    background: #fff;
+    position: relative;
+    width: 87px;
+  }
+  
+  .header-button.base::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius-button); 
+    padding: 2px; 
+    background:linear-gradient(#BC9CFF, #8BA4F9); 
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  }
+  
+  .button-login{
+  position: absolute;
+  display: inline-block;
+  height: 30px;
+  padding-inline: 20px;
+  border: none;
+  background: var(--background);  /* Градиент для текста */
+  -webkit-background-clip: text;  /* Обрезаем фон по тексту */
+  -webkit-text-fill-color: transparent; /*  Прозрачный текст */
+  left: 2px;
+  top: 2px;
+  cursor: pointer;
  }
 
+.button-sing-up{
+  padding-inline: 19px;
+  color: #ffffff;
+}
+   
 .header  {
   display: flex;
+  max-width: 1440px;
+  height: 70px;
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
