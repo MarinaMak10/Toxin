@@ -251,64 +251,6 @@
     font-size: 12px;
  }
 
-.header-actions{
-  display: flex; 
-  position: relative;
-  gap: 20px;
-  }
-
- .header-button  {
-  display: inline-block;
-  border: none;
-  height: 34px;
-  align-items: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: var(--font-size-button);
-  background: var(--background);
-  cursor: pointer;
-  border-radius: var(--border-radius-button);
-  }
-
-  .header-button.base{
-    background: #fff;
-    position: relative;
-    width: 87px;
-  }
-  
-  .header-button.base::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--border-radius-button); 
-    padding: 2px; 
-    background:linear-gradient(#BC9CFF, #8BA4F9); 
-    -webkit-mask: 
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude; 
-  }
-  
-  .button-login{
-  position: absolute;
-  display: inline-block;
-  height: 30px;
-  padding-inline: 20px;
-  border: none;
-  background: var(--background);  /* Градиент для текста */
-  -webkit-background-clip: text;  /* Обрезаем фон по тексту */
-  -webkit-text-fill-color: transparent; /*  Прозрачный текст */
-  left: 2px;
-  top: 2px;
-  cursor: pointer;
- }
-
-.button-sing-up{
-  padding-inline: 19px;
-  color: #ffffff;
-}
-   
 .header  {
   display: flex;
   max-width: 1440px;
@@ -318,10 +260,25 @@
   column-gap: 20px;
 }
 
+.logo{
+  margin: 12px;
+  align-items: center;
+  display: flex;
+}
+
+.header-logo,  .header-logo-name  {
+  flex-shrink: 0;
+}
+
+.header-logo {
+  display: inline-block;
+  margin: 2px 6px;
+
+}
 .header-menu-list  {
   display: flex;
   column-gap: 20px;
-  
+  white-space: nowrap;
 }
 
 .header-menu-link  {
@@ -359,3 +316,72 @@ align-items: center;
   border-radius: var(--border-radius-field);
   z-index: 1;
 }
+
+.header-actions{
+  display: flex; 
+  position: relative;
+  gap: 20px;
+  }
+
+ .header-button  {
+  display: inline-block;
+  border: none;
+  height: 34px;
+  align-items: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--font-size-button);
+  background: var(--background);
+  border-radius: var(--border-radius-button);
+  }
+
+  /* .header-button.base{
+    background: #fff;
+    position: relative;
+    width: 87px;
+  } */
+  
+  /* .header-button.base::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius-button); 
+    padding: 2px; 
+    background:linear-gradient(#BC9CFF, #8BA4F9); 
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  } */
+  
+  .button-login{
+  position: absolute;
+  display: inline-block;
+  height: 30px;
+  padding-inline: 20px;
+  border: none;
+  color: #BC9CFF;
+  /* background: var(--background);   Градиент для текста */
+  -webkit-background-clip: text;  /* Обрезаем фон по тексту */
+  -webkit-text-fill-color: transparent;  /* Прозрачный текст */
+  left: 2px;
+  top: 2px; */
+}
+
+.button-sing-up{
+  padding-inline: 19px;
+  color: #ffffff;
+}
+
+.button-sing-up:hover{
+scale: 105%;
+-webkit-background-clip: none;  /* Обрезаем фон по тексту */
+-webkit-text-fill-color: none;  
+}
+
+.test-login{
+  padding-inline: 19px;
+  color: #ffffff;
+}
+
