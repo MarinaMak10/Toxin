@@ -1,0 +1,251 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url("fonts/Montserrat-Regular.woff2") format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("fonts/Montserrat-Bold.woff2") format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --color-dark-100: rgba(31, 32, 65, 1);
+  --color-dark-75: rgba(31, 32, 65, .75);
+  --color-dark-50: rgba(31, 32, 65, .5);
+  --color-dark-25: rgba(31, 32, 65, .25);
+  --color-dark-5: rgba(31, 32, 65, .05);
+  --color-purple: #BC9CFF;
+  --color-green: #6FCF97;
+
+  --background: linear-gradient(#BC9CFF, #8BA4F9);
+
+  --border-radius-field: 4px;
+  --border-radius-toggle: 10px;
+  --border-radius-button: 22px;
+
+  --border-field-default: 1px solid var(--color-dark-25);
+  --border-field-focus: 1px solid var(--color-dark-50);
+  --border-toggle: 1px solid var(--color-purple);
+  --border-button: 2px solid var(--background);
+
+  --font-family-base: 'Montserrat', sans-serif;
+  --font-size: 14px;
+  --font-size-button: 12px;
+
+  --input-height: 44px;
+  --input-toggle-height: 20px;
+
+  --container-width: 1440px;
+  --container-padding-x: 15px;
+
+  --transition-duration: 0.2s;
+
+}
+
+body {
+  background-color: white;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--color-dark-75);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: var(--color-dark-50);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-dark-75);
+}
+
+/* .container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+} */
+
+h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 19px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.header {
+  display: flex;
+  max-width: 1440px;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  padding-inline: 140px;
+}
+
+.logo {
+  margin: 12px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.header-logo,
+.header-logo-name {
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.header-logo {
+  margin: 2px 6px ;
+
+}
+
+.header-menu{
+  display: inline-flex;
+}
+
+.header-menu-list {
+  display: inline-flex;
+  column-gap: 20px;
+  white-space: nowrap;
+}
+
+.header-menu-link {
+  display: inline-flex;
+  align-items: center;
+  
+}
+
+/* 
+.menu-link-dropdown  {
+  column-gap: 0;
+}*/
+
+.header-menu-link.item-dropdown::after {
+  content: "";
+  border-bottom: 2px solid var(--color-dark-75);
+  border-right: 2px solid var(--color-dark-75);
+  transform: rotate(45deg);
+  width: 7px;
+  height: 7px;
+  align-items: center;
+
+}
+
+.item-dropdown {
+  display: inline-flex;
+  gap: 7px;
+  flex-direction: row;
+  
+}
+
+.header-menu-link{
+  position: relative;
+}
+
+.menu-item-dropdown {
+  position: absolute;
+  width: 160px;
+  border: var(--border-field-default);
+  border-radius: var(--border-radius-field);
+  z-index: 1;
+  top: 10px;
+left: 0;
+}
+
+.header-actions {
+  display: inline-flex;
+  position: relative;
+  gap: 20px;
+  padding-left: 20px;
+  }
+
+.header-button {
+  display: inline-flex;
+  border: none;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--font-size-button);
+  background: var(--background);
+  border-radius: var(--border-radius-button);
+  font-family: var(--font-family-base);
+
+}
+
+.button-login,
+.button-burger-menu {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fff;
+  width: 87px;
+  justify-content: center;
+  align-items: center;
+  color: #BC9CFF;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to bottom, #BC9CFF, #8BA4F9) border-box;
+  border-radius: var(--border-radius-button);
+  border: 2px solid transparent;
+  }
+
+.button-login:hover {
+  scale: 105%;
+}
+
+.button-sing-up {
+  padding-inline: 19px;
+  color: #ffffff;
+}
+
+.button-sing-up:hover {
+  scale: 105%;
+}
+
+.button-burger-menu {
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+  display: none;
+}
+
+.burger-menu:nth-child(odd) {
+  width: 10px;
+  height: 2px;
+  background: var(--color-purple);
+  border-radius: 1px;
+}
+
+.burger-menu:nth-child(2) {
+  width: 15px;
+  height: 2px;
+  background: var(--color-green);
+  border-radius: 1px;
+}
