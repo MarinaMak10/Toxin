@@ -2,10 +2,16 @@
         .header {
             padding-inline: 70px;
         }
+        .footer .footer-main {
+            padding-inline: 70px;
+        }
     }
 
     @media screen and (max-width: 768px) {
         .header {
+            padding-inline: 40px;
+        }
+        .footer .footer-main {
             padding-inline: 40px;
         }
     }
@@ -15,9 +21,9 @@
             padding-inline: 20px;
         }
 
-        .header-menu {
+        .menu-list {
             display: none;
-            /* Изменять при media-запросе */
+                    
         }
 
         .button-sing-up {
@@ -26,25 +32,23 @@
 
         .button-burger-menu {
             display: flex;
-            /* Изменять при media-запросе */
         }
-    }
-
-    @media screen and (max-width: 375px) {
-        .header {
-            padding-inline: 5px;
+        .footer.footer .footer-main {
+            padding-inline: 20px;
         }
+   
     }
-
     @media screen and (min-width: 576px) and (max-width: 992px) {
 
         .button-burger-menu {
             display: flex;
-            /* Изменять при media-запросе */
         }
 
-        .header-menu {
+        .menu-list {
             display: none;
-            /* Изменять при media-запросе */
         }
+
+        .footer-body {
+            column-gap: 40px;
+    }
     }

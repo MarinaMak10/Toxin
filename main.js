@@ -1,7 +1,7 @@
 // Получаем элементы бургер-меню, навигационного меню и полоски иконки бургер-меню
-const burgerMenu = document.querySelector('.button-burger-menu'); // Иконка бургер-меню
+const burgerMenu = document.querySelector('.button-burger-menu'); //Иконка бургер-меню
 const nav = document.querySelector('header-menu'); // Меню навигации
-const burgerBars = document.querySelectorAll('.burger-menu'); // Полоски внутри бургер-меню
+const burgerBars = document.querySelectorAll('.burger-menu'); //Полоски внутри бургер-меню
 
 // Флаг, который хранит состояние меню (открыто/закрыто)
 let isOpenMenu = false;
@@ -32,10 +32,10 @@ function toggleMenu() {
 
 // Функция, которая отслеживает изменение размера экрана и применяет соответствующие стили
 function applyStyles() {
-    // Проверка, является ли текущее окно десктопным (ширина больше или равна 768px)
-    const isDesktop = window.matchMedia("(min-width: 1120px)").matches;
+    // Проверка, является ли текущее окно десктопным (ширина больше или равна 992px)
+    const isDesktop = window.matchMedia("(min-width: 992px)").matches;
     if (isDesktop) {
-        // Если ширина экрана больше или равна 768px (десктопная версия), возвращаем стили для десктопа
+        // Если ширина экрана больше или равна 992px (десктопная версия), возвращаем стили для десктопа
         resetToDesktop();
     } else if (isOpenMenu) {
         // Если ширина экрана меньше 768px и меню открыто, сохраняем крестик и мобильное меню
